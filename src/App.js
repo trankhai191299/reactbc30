@@ -4,6 +4,7 @@
 import Databinding from "./Components/Databinding/Databinding";
 import HandleEvent from "./Components/HandleEvent/HandleEvent";
 import Home from "./Components/Home/Home";
+import DemoProps from "./Props/DemoProps/DemoProps";
 import BaitapRenderMap from "./RenderWithMap/BaitapRenderMap";
 import RenderWithMap from "./RenderWithMap/RenderWithMap";
 import BaiTapState from "./State/BaiTapState";
@@ -23,7 +24,8 @@ function App() {
       <StyleRender/> */}
       {/* <BaiTapState/> */}
       {/* <RenderWithMap /> */}
-      <BaitapRenderMap/>
+      {/* <BaitapRenderMap/> */}
+      <DemoProps/>
     </div>
   );
 }
