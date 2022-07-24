@@ -11,13 +11,17 @@ export default class ExerciseCarStore extends Component {
       price: 1000,
     },
   };
-
+  xemChiTiet = (sanPhamClick) => {
+    this.setState({
+        modalState : sanPhamClick
+    })
+  }
   render() {
     return (
       <div className="container">
         <h3>ExerciseCarStore</h3>
         <ExModal modalState={this.state.modalState}/>
-        <ExProductList />
+        <ExProductList xemChiTiet={this.xemChiTiet}/>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class ExProductItem extends Component {
   render() {
-    let {product} = this.props;
+    let {product,xemChiTiet} = this.props;
     return (
          
       <div className="card">
@@ -10,7 +10,9 @@ export default class ExProductItem extends Component {
         <div className="card-body">
             <p>{product.name}</p>
             <p>{product.price}</p>
-            <button className='btn btn-success'data-bs-toggle="modal" data-bs-target="#modelId">Detail</button>
+            <button className='btn btn-success'data-bs-toggle="modal" data-bs-target="#modelId" onClick={()=>{
+                xemChiTiet(product)
+            }}>Detail</button>
         </div>
       </div>
     )

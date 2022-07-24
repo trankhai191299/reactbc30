@@ -3,18 +3,18 @@ import ExProductItem from "./ExProductItem";
 const data = [
   {
     id: 1,
-    name: "black car",
+    name: "Black car",
     img: "./img/products/black-car.jpg",
     price: 1000,
   },
   { id: 2, 
-    name: "red car", 
+    name: "Red car", 
     img: "./img/products/red-car.jpg", 
     price: 2000,
   },
   {
     id: 3,
-    name: "silver car",
+    name: "Silver car",
     img: "./img/products/silver-car.jpg",
     price: 3000,
   },
@@ -28,13 +28,15 @@ const data = [
 
 export default class ExProductList extends Component {
     renderProduct = () => {
+        let {xemChiTiet} = this.props;
         return data.map((prod,index)=>{
             return <div className="col-3" key={index}>
-                <ExProductItem product={prod}/>
+                <ExProductItem product={prod} xemChiTiet = {xemChiTiet}/>
             </div>
         })
     }
     render() {
+
     return (
         <div>
             <h3 className="text-center">Product List</h3>
