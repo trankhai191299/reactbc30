@@ -4,7 +4,10 @@
 import Databinding from "./Components/Databinding/Databinding";
 import HandleEvent from "./Components/HandleEvent/HandleEvent";
 import Home from "./Components/Home/Home";
+import ProductList from "./Props/BaiTapProp/ProductList";
+import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
 import DemoProps from "./Props/DemoProps/DemoProps";
+import ExerciseCarStore from "./Props/ExerciseCarStore/ExerciseCarStore";
 import BaitapRenderMap from "./RenderWithMap/BaitapRenderMap";
 import RenderWithMap from "./RenderWithMap/RenderWithMap";
 import BaiTapState from "./State/BaiTapState";
@@ -25,7 +28,10 @@ function App() {
       {/* <BaiTapState/> */}
       {/* <RenderWithMap /> */}
       {/* <BaitapRenderMap/> */}
-      <DemoProps/>
+      {/* <DemoProps/> */}
+      {/* <ProductList/> */}
+      {/* <BaiTapXemChiTiet/> */}
+      <ExerciseCarStore/>
     </div>
   );
 }
