@@ -1,37 +1,80 @@
 // import logo from './logo.svg';
 // import './App.css';
 
-import Databinding from "./Components/Databinding/Databinding";
-import HandleEvent from "./Components/HandleEvent/HandleEvent";
-import Home from "./Components/Home/Home";
-import ProductList from "./Props/BaiTapProp/ProductList";
-import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
-import DemoProps from "./Props/DemoProps/DemoProps";
-import ExerciseCarStore from "./Props/ExerciseCarStore/ExerciseCarStore";
-import BaitapRenderMap from "./RenderWithMap/BaitapRenderMap";
-import RenderWithMap from "./RenderWithMap/RenderWithMap";
-import BaiTapState from "./State/BaiTapState";
-import DemoState from "./State/DemoState";
-import StyleRender from "./StyleRender/StyleRender";
-
-
+import { NavLink, Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Home /> */}
-      {/* <Databinding /> */}
-      {/* <HandleEvent/> */}
-      {/* <DemoState/> */}
-      {/* <p className="color-red">App</p>
-      <StyleRender/> */}
-      {/* <BaiTapState/> */}
-      {/* <RenderWithMap /> */}
-      {/* <BaitapRenderMap/> */}
-      {/* <DemoProps/> */}
-      {/* <ProductList/> */}
-      {/* <BaiTapXemChiTiet/> */}
-      <ExerciseCarStore/>
+    <div>
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <NavLink className="navbar-brand" to="/">
+          CyberSoft
+        </NavLink>
+        <button
+          className="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        />
+        <div className="collapse navbar-collapse" id="collapsibleNavId">
+          <ul className="navbar-nav me-auto mt-2 mt-lg-0">
+            <li className="nav-item active">
+              <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'}
+              style={({isActive}) => isActive ? {borderRadius:'5px'} : {}}
+              to="/home">
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/about">
+                About
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/contact">
+                Contact
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/login">
+                Login
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/register">
+                Register
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/reactform">
+              Product Management
+              </NavLink>
+            </li>
+          </ul>
+          <form className="d-flex my-2 my-lg-0">
+            <input
+              className="form-control me-sm-2"
+              type="text"
+              placeholder="Search"
+            />
+            <button
+              className="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      <div style={{minHeight:500}}>
+        <Outlet />
+      </div>
+      
+      <footer className="bg-dark text-white text-center p-5">Footer</footer>
     </div>
   );
 }
