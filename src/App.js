@@ -28,7 +28,7 @@ function App() {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/about">
                 About
               </NavLink>
@@ -37,21 +37,38 @@ function App() {
               <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/contact">
                 Contact
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/login">
                 Login
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/register">
-                Register
-              </NavLink>
+              
             </li>
             <li className="nav-item">
               <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/reactform">
-              Product Management
+              React Form
               </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive}) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} to="/lifecycle">
+              Life Circle
+              </NavLink>
+            </li>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown">Redux Demo</a>
+              <div className="dropdown-menu">
+                <NavLink className="dropdown-item" to="/demotanggiam">
+                  UpDownSoLuong
+                </NavLink>
+                <NavLink className="dropdown-item" to="/demochangecolor">
+                  Change Color
+                </NavLink>
+                <NavLink className="dropdown-item" to="/demoqlsv">
+                  QLSV
+                </NavLink>
+              </div>
             </li>
           </ul>
           <form className="d-flex my-2 my-lg-0">
@@ -80,3 +97,4 @@ function App() {
 }
 
 export default App;
+

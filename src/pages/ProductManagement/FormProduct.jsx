@@ -1,23 +1,26 @@
 import React, { Component } from "react";
 
 export default class FormProduct extends Component {
-  state = {
-    productInfo: {
-      id: "",
-      name: "",
-      price: "",
-      img: "",
-      productType: "mobile",
-      description: "",
-    },
-    errors: {
-      id: "",
-      name: "",
-      price: "",
-      img: "",
-      description: "",
-    },
-  };
+    state = {
+      productInfo: {
+        id: "",
+        name: "",
+        price: "",
+        img: "",
+        productType: "mobile",
+        description: "",
+      },
+      errors: {
+        id: "",
+        name: "",
+        price: "",
+        img: "",
+        description: "",
+      },
+    };
+
+
+  
   handleChange = (e) => {
     let { id, value } = e.target;
     let dataType = e.target.getAttribute('data-type')
@@ -62,7 +65,7 @@ export default class FormProduct extends Component {
     }
     //check productInfo
     for (let key in productInfo){
-      if(productInfo[key].trim() == ''){
+      if(productInfo[key].trim() === ''){
         errors[key] = key + ' không được bỏ trống'
         valid = false
         
@@ -78,8 +81,22 @@ export default class FormProduct extends Component {
     // alert('Submited')
     this.props.createProd(productInfo)
   }
+  // static getDerivedStateFromProps(newProps,currentState){
+  //     //lấy 
+  //   if(currentState.productInfo?.id !== newProps.prodEdit?.id) {
+  //     currentState.productInfo = newProps.prodEdit
+  //     return currentState
+  //   } 
+  //   return null
+  //   }
+  componentWillReceiveProps(newProps) {
+    //Khi bấm nút chỉnh sửa lấy props gán vào state => giao diện render ra từ state
+    this.setState({
+        productInfo: newProps.productEdit
+    })
+}
   render() {
-    let {id,name,price,img,productType,description} = this.props.prodEdit
+    let {id,name,price,img,productType,description} = this.state.productInfo
     return (
       <form className="card" onSubmit={this.handleSubmit}>
         <div
@@ -171,7 +188,9 @@ export default class FormProduct extends Component {
         </div>
         <div className="card-footer">
           <button className="btn btn-success mx-2">Create</button>
-          <button className="btn btn-primary mx-2">Update</button>
+          <button className="btn btn-primary mx-2" onClick={()=>{
+            this.props.updateProduct(this.state.productInfo)
+          }}>Update</button>
         </div>
       </form>
     );
