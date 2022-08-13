@@ -66,18 +66,18 @@ export default class ProductManagement extends Component {
       </div>
     )
   }
-  // componentDidMount(){
-  //   let promise = axios({
-  //     url:"http://svcy.myclass.vn/api/Product/GetAll",
-  //     method:"GET",
-  //   })
-  //   promise.then(result =>{
-  //     this.setState({
-  //       arrProduct: result.data
-  //     })
-  //   })
-  //   promise.catch(error=>{
-  //     console.log(error)
-  //   })
-  // }
+  componentDidMount(){
+    let promise = axios({
+      url:"http://svcy.myclass.vn/api/Product/GetAll",
+      method:"GET",
+    })
+    promise.then(result =>{
+      this.setState({
+        arrProduct: result.data
+      })
+    })
+    promise.catch(error=>{
+      console.log(error)
+    })
+  }
 }
