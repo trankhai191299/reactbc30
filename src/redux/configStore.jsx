@@ -3,11 +3,13 @@ import { numberReducer } from './reducers/numReducer';
 import { imgReducer } from './reducers/imgReducer';
 import { qlsvReducer } from './reducers/qlsvReducer';
 import { demoGioHangReducer } from './reducers/demoGioHangReducer';
+import { baitapBurgerReducer } from './reducers/baitapBurgerReducer';
 const rootReducer = combineReducers({
     number : numberReducer,
     imgCar : imgReducer,
     qlsvReducer,
     demoGioHangReducer,
+    baitapBurgerReducer,
 })
 
 export const store = createStore(rootReducer,

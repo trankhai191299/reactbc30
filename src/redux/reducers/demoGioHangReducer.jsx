@@ -67,6 +67,36 @@ export const demoGioHangReducer = (state= stateDefault,action) =>{
           state.gioHang = gioHangUpdate
           return {...state}
         }
+        case 'XOA_GIO_HANG':{
+          //1.
+          let {maSPClick} = action.payload;
+          //2.
+          let gioHangUpdate = [...state.gioHang];
+          gioHangUpdate = gioHangUpdate.filter(spGH => spGH.maSP !== maSPClick)
+          //3.
+          state.gioHang = gioHangUpdate
+          return {...state}
+        }
+        case 'TANG_GIAM_SL':{
+          //1.
+          let {maSP,soLuong} = action.payload
+          //2.
+          let gioHangUpdate = [...state.gioHang]
+          let sp = gioHangUpdate.find(spGH => spGH.maSP === maSP)
+          if(sp){
+            sp.soLuong += soLuong
+            if(sp.soLuong < 1){
+              if(window.confirm('Bạn muốn xóa không?')){
+                gioHangUpdate = gioHangUpdate.filter(spGH => spGH.maSP !== maSP)
+              }else{
+                sp.soLuong -= soLuong
+              }
+            }
+            
+          }
+          state.gioHang = gioHangUpdate
+          return {...state}
+        }
         default : return state
     }
 }

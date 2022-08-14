@@ -71,6 +71,9 @@ function App() {
                 <NavLink className="dropdown-item" to="/demogiohang">
                   Gio Hang
                 </NavLink>
+                <NavLink className="dropdown-item" to="/demoburger">
+                  Burger
+                </NavLink>
               </div>
             </li>
           </ul>

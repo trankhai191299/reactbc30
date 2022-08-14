@@ -6,7 +6,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login'
-import Page404 from './pages/Page404/Page404';
+// import Page404 from './pages/Page404/Page404';
 import ProductManagement from './pages/ProductManagement/ProductManagement';
 import Register from './pages/Register/Register';
 import ReactLifeCycle from './ReactLifeCycle/ReactLifeCycle';
@@ -18,6 +18,7 @@ import DemoTangGiam from './pages/DemoRedux/DemoTangGiam/DemoTangGiam';
 import DemoChangeColor from './pages/DemoRedux/DemoChangeColor/DemoChangeColor';
 import DemoQLSV from './pages/DemoRedux/DemoQLSV/DemoQLSV';
 import DemoGioHang from './pages/DemoRedux/DemoGioHang/DemoGioHang';
+import BaiTapBurger from './pages/DemoRedux/DemoBurger/BaiTapBurger';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
@@ -39,7 +40,7 @@ root.render(
           <Route path='demochangecolor' element={<DemoChangeColor/>}></Route>
           <Route path='demoqlsv' element={<DemoQLSV/>}></Route>
           <Route path='demogiohang' element={<DemoGioHang/>}></Route>
-
+          <Route path='demoburger' element={<BaiTapBurger/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
